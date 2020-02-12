@@ -1,7 +1,7 @@
 // Your code goes here
 const noHome = document.querySelector('.nav-link')
 noHome.addEventListener('click', (e) => {
-  e.preventDefault;
+  e.preventDefault();
   console.log('link stopped')
 })
 
@@ -13,6 +13,46 @@ font.forEach( e => {addEventListener('keydown', () => {
     e.style.color = rainbow;
     });
 })
+
+const body = document.querySelectorAll('.home')
+window.addEventListener('load', () => {
+    body[0].style.backgroundColor = 'green';
+})
+
+window.addEventListener('scroll', () => {
+    body[0].style.backgroundColor = 'red';
+})
+
+body[0].addEventListener('click', () => {
+    body[0].style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+})
+
+
+const buttCon = document.querySelectorAll('.content-pick')
+buttCon.forEach( e => {e.addEventListener('click', () => {
+    e.style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    event.stopPropagation();
+})})
+
+const butt = document.querySelectorAll('.btn')
+butt.forEach( e => {e.addEventListener('click', () => {
+    e.style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    event.stopPropagation();
+})})
+
+const bigFont = document.querySelectorAll('p')
+bigFont.forEach( e => {e.addEventListener('mouseenter', () => {
+    e.style.fontSize = '10rem';
+})})
+
+bigFont.forEach( e => {e.addEventListener('mouseleave', () => {
+    e.style.fontSize = '2rem';
+})})
+
+
+
+
+
 
 const blobPic = document.querySelectorAll('img')
 blobPic.forEach(e => {e.addEventListener('click', () => {
@@ -36,5 +76,10 @@ window.onresize = function() {
         );;
     }, 100);
 };
+
+const logo = document.querySelector('.logo-heading')
+logo.addEventListener('click', () => {
+    gsap.to(logo, {x:500, y:300, scale:900, duration:4})
+})
 
 
